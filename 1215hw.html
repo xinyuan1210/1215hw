@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <script>
+        window.onload = function() {
+            var rand = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 10
+            var guessedCorrectly = false;
+
+            while (!guessedCorrectly) {
+                var userGuess = prompt("Guess the number between 1 and 10:");
+
+                // Check if the input is a valid number
+                if (isNaN(userGuess)) {
+                    alert("Please enter a valid number.");
+                } else {
+                    userGuess = parseInt(userGuess);
+
+                    // Check if the guess is correct
+                    if (userGuess === rand) {
+                        guessedCorrectly = true;
+                        alert("Congratulations! You guessed the correct number.");
+                    } else {
+                        alert("Incorrect guess. Try again!");
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Number Guessing Game</h1>
+    <p>Try to guess the correct number between 1 and 10.</p>
+</body>
+</html>
